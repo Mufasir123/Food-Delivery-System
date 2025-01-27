@@ -38,29 +38,29 @@ const OrdersHistory = () => {
         <p className="text-lg text-red-500">{error}</p>
       ) : orders.length > 0 ? (
         <div className="space-y-5">
-          {orders.map((order) => (
+          {orders?.map((order) => (
             <div
-              key={order._id}
+              key={order?._id}
               className="border border-gray-300 p-4 rounded-lg shadow-lg space-y-4"
             >
               <div className="flex flex-col sm:flex-row sm:justify-between">
                 <div className="order-details sm:ml-4 sm:mt-0 mt-4">
                   <p className="font-semibold text-gray-800">Order ID:</p>
-                  <p>{order._id}</p>
+                  <p>{order?._id}</p>
                 </div>
 
                 <div className="order-status sm:ml-4 sm:mt-0 mt-4">
                   <p className="font-semibold text-gray-800">Status:</p>
-                  <p>{order.status}</p>
+                  <p>{order?.status}</p>
                 </div>
               </div>
 
               <div className="order-items mt-4">
                 <p className="font-semibold text-gray-800">Items:</p>
                 <ul className="list-disc pl-5">
-                  {order.items.map((item) => (
-                    <li key={item._id}>
-                      {item.menuItem.name} × {item.quantity}
+                  {order?.items.map((item) => (
+                    <li key={item?._id}>
+                      {item?.menuItem.name} × {item?.quantity}
                     </li>
                   ))}
                 </ul>
@@ -69,14 +69,14 @@ const OrdersHistory = () => {
               <div className="order-total flex flex-col sm:flex-row sm:justify-between mt-4">
                 <div>
                   <p className="font-semibold text-gray-800">Total Amount:</p>
-                  <p className="font-bold text-xl">${order.totalAmount}</p>
+                  <p className="font-bold text-xl">${order?.totalAmount}</p>
                 </div>
 
                 <div className="order-date sm:ml-4 sm:mt-0 mt-4">
                   <p className="font-semibold text-gray-800">Date:</p>
                   <p>
-                    {new Date(order.createdAt).toLocaleDateString()}{" "}
-                    {new Date(order.createdAt).toLocaleTimeString()}
+                    {new Date(order?.createdAt).toLocaleDateString()}{" "}
+                    {new Date(order?.createdAt).toLocaleTimeString()}
                   </p>
                 </div>
               </div>

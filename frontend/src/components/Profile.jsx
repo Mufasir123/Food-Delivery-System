@@ -27,6 +27,8 @@ const Profile = ({ isMobile }) => {
         },
           withCredentials: true,
         })
+        console.log(res);
+        
         dispatch(getMyProfile(res.data.user))
       } catch (error) {
         console.error("Error fetching profile:", error)
