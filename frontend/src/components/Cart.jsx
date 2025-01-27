@@ -17,7 +17,7 @@ const Cart = () => {
 
   // Function to remove a product from the cart
   const removeFromCart = (id) => {
-    dispatch(remove(id));    
+    dispatch(remove(id));
   };
 
   // Function to handle quantity changes for a specific product
@@ -41,7 +41,7 @@ const Cart = () => {
 
       // Send POST request to create an order
       const res = await axios.post(
-        `${import.meta.env.VITE_SERVER_URL}/orders/createorder`,
+        `${import.meta.env.VITE_SERVER_URL}/api/orders/createorder`,
         { items },
         {
           headers: {
@@ -76,7 +76,9 @@ const Cart = () => {
                 {/* Product Image */}
                 <img
                   alt={product.name}
-                  src={`${import.meta.env.VITE_SERVER_URL}/images/${product.image}`}
+                  src={`${import.meta.env.VITE_SERVER_URL}/images/${
+                    product.image
+                  }`}
                   className="aspect-square w-62 h-62 rounded-lg bg-gray-200 object-cover"
                 />
                 {/* Product Name and Price */}
