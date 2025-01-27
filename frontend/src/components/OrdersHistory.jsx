@@ -17,6 +17,8 @@ const OrdersHistory = () => {
         withCredentials: true,
       });
       setOrders(res.data); // Save orders to state
+      console.log(res);
+      
       setLoading(false);
     } catch (err) {
       setError(err.response?.data?.error || "Failed to fetch orders.");
