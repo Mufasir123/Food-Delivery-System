@@ -14,7 +14,7 @@ const TrendingProducts = () => {
     const fetchFoodItems = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:4000/api/menu/items", {
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/menu/items`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -34,7 +34,7 @@ const TrendingProducts = () => {
     dispatch(add(product));
   };
 
-  const limitedProducts = data.slice(0,6)
+  const limitedProducts = data
 
   return (
     <div>
@@ -53,7 +53,7 @@ const TrendingProducts = () => {
           >
             <Link to="#">
               <img
-                src={`http://localhost:4000/images/${product.image}`}
+                src={`${import.meta.env.VITE_SERVER_URL}/images/${product.image}`}
                 alt="Product"
                 className="h-80 w-72 object-cover rounded-t-xl"
               />

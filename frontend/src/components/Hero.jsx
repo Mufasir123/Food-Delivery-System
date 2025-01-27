@@ -1,10 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Hero() {
-
-  const {food} = useSelector(state => state.food)
   return (
     <div className="relative">
       <section className="relative bg-gray-900">

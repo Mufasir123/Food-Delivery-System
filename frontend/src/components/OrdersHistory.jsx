@@ -10,7 +10,7 @@ const OrdersHistory = () => {
   const fetchOrders = async () => {
     try {
       const token = localStorage.getItem("token"); // Replace with your token key
-      const res = await axios.get("http://localhost:4000/api/orders/getorder", {
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/orders/getorder`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -9,7 +9,7 @@ const ListItems = () => {
   // Fetch menu items
   const fetchMenuItems = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/menu/items");
+      const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/menu/items`);
       setMenuItems(response.data.menuItems);
     } catch (error) {
       console.error("Error fetching menu items:", error);
@@ -22,7 +22,7 @@ const ListItems = () => {
 
     try {
       const token = localStorage.getItem("token")
-      await axios.delete(`http://localhost:4000/api/menu/items/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_SERVER_URL}/api/menu/items/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -39,7 +39,7 @@ const ListItems = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token")
-      await axios.put(`http://localhost:4000/api/menu/update/${id}`, updatedData, {
+      await axios.put(`${import.meta.env.VITE_SERVER_URL}/api/menu/update/${id}`, updatedData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

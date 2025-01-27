@@ -27,7 +27,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const url = isLogin ? "http://localhost:4000/api/user/login" : "http://localhost:4000/api/user/register"
+      const url = isLogin ? `${import.meta.env.VITE_SERVER_URL}/api/user/login` : `${import.meta.env.VITE_SERVER_URL}/api/user/register`
 
       const response = await axios.post(url, data, {
         withCredentials: true,

@@ -28,7 +28,7 @@ const Products = () => {
           >
             <Link to="#">
               <img
-                src={`http://localhost:4000/images/${product.image}`}
+                src={`${import.meta.env.VITE_SERVER_URL}/${product.image}`}
                 alt="Product"
                 className="h-80 w-72 object-cover rounded-t-xl"
               />

@@ -41,7 +41,7 @@ const Cart = () => {
 
       // Send POST request to create an order
       const res = await axios.post(
-        "http://localhost:4000/api/orders/createorder",
+        `${import.meta.env.VITE_SERVER_URL}/orders/createorder`,
         { items },
         {
           headers: {
@@ -76,7 +76,7 @@ const Cart = () => {
                 {/* Product Image */}
                 <img
                   alt={product.name}
-                  src={`http://localhost:4000/images/${product.image}`}
+                  src={`${import.meta.env.VITE_SERVER_URL}/images/${product.image}`}
                   className="aspect-square w-62 h-62 rounded-lg bg-gray-200 object-cover"
                 />
                 {/* Product Name and Price */}

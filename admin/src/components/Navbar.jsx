@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/user/logout`, {
+      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/user/logout`, {
         withCredentials: true,
       })
       dispatch(getUser(null))

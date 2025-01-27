@@ -45,7 +45,7 @@ const MenuForm = () => {
     try {
       const token = localStorage.getItem("token")
       const response = await axios.post(
-        "http://localhost:4000/api/menu/items",
+        `${import.meta.env.VITE_SERVER_URL}/api/menu/items`,
         form,
         {
           headers: {
@@ -55,8 +55,7 @@ const MenuForm = () => {
         }
       );
       setMessage("Menu item created successfully!");
-      console.log("Response",response.data);
-      // toast.success(response.data.success)
+      toast.success(response.data.success)
     } catch (error) {
       setError(
         error.response?.data?.error || "Failed to create menu item. Please try again."
