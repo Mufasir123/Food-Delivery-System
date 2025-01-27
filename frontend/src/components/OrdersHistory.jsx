@@ -58,9 +58,9 @@ const OrdersHistory = () => {
               <div className="order-items mt-4">
                 <p className="font-semibold text-gray-800">Items:</p>
                 <ul className="list-disc pl-5">
-                  {order?.items.map((item) => (
+                  {order?.items?.map((item) => (
                     <li key={item?._id}>
-                      {item?.menuItem.name} × {item?.quantity}
+                      {item?.menuItem?.name} × {item?.quantity}
                     </li>
                   ))}
                 </ul>
