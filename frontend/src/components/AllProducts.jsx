@@ -8,8 +8,6 @@ const Products = () => {
   const dispatch = useDispatch()
   const { data } = useSelector((state) => state.food);
 
-  console.log("data is coming", data);
-
   const addToCart = (product) => {
     dispatch(add(product));
   };
