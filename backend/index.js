@@ -5,10 +5,11 @@ import userRouter from './routes/userRouter.js'
 import orderRoutes from './routes/orderRoutes.js'
 import menuRoutes from './routes/menuRoutes.js'
 import path from 'path'
+import dotenv from 'dotenv'
 
-
+dotenv.config()
 const app = express()
-const PORT = 4000
+const PORT =process.env.PORT || 4000
 
 app.use(express.json())
 const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174'];

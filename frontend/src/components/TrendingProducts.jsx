@@ -34,7 +34,7 @@ const TrendingProducts = () => {
     dispatch(add(product));
   };
 
-  const limitedProducts = data.slice(0,6)
+  const limitedProducts = data
 
   return (
     <div>
