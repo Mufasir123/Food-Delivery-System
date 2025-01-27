@@ -6,10 +6,7 @@ dotenv.config()
 
 const authMiddleware = async (req, res, next) => {
     try {
-        // Check if Authorization header is present
         const token = req.header('Authorization')?.replace('Bearer ', '');
-        console.log('Authorization Header:', req.header('Authorization')); // Log the header
-        console.log('Extracted Token:', token);
         if (!token) {
             console.log("No token found in request");
             return res.status(401).json({ error: 'Authentication required' });
