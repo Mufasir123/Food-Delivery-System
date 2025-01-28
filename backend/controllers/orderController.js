@@ -44,8 +44,6 @@ export const getUserOrders = async (req, res) => {
         const orders = await Order.find({ 
             userId: req.user._id 
         }).populate('items.menuItem');
-        console.log("Orders:" , orders);
-        
         res.json(orders);
     } catch (error) {
         res.status(500).json({ error: error.message });
