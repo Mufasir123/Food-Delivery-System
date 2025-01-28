@@ -30,7 +30,7 @@ const authMiddleware = async (req, res, next) => {
         next();
     } catch (error) {
         console.log("Error in authMiddleware:", error);
-        res.status(401).json({ error: 'No orders' });
+        res.status(401).json({ error: 'Authentication error' });
     }
 };
 
