@@ -25,6 +25,7 @@ export const createMenuItem = async (req, res) => {
 export const getAllMenuItems = async (req, res) => {
     try {
         const menuItems = await Menu.find({});
+        
         res.json({
             success:true,
             message:"All items are feacted successfully",

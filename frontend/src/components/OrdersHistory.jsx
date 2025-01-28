@@ -16,8 +16,8 @@ const OrdersHistory = () => {
         },
         withCredentials: true,
       });
+      console.log("Response is coming",res);
       setOrders(res.data); // Save orders to state
-      console.log(res);
       
       setLoading(false);
     } catch (err) {
