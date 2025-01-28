@@ -80,10 +80,10 @@ const Profile = ({ isMobile }) => {
             <p className="text-sm text-gray-600">{user.email}</p>
           </div>
           <Link
-            to="/profile"
+            to="/orders"
             className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
           >
-            Profile
+            Orders
           </Link>
           <Link
             to="/cart"
