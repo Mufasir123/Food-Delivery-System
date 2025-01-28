@@ -14,12 +14,15 @@ const TrendingProducts = () => {
     const fetchFoodItems = async () => {
       try {
         const token = localStorage.getItem("token");
-      const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/api/menu/items`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_SERVER_URL}/api/menu/items`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
+        );
 
         dispatch(getFoodList(res.data.menuItems));
       } catch (error) {
@@ -33,8 +36,8 @@ const TrendingProducts = () => {
   const addToCart = (product) => {
     dispatch(add(product));
   };
-
-  const limitedProducts = data
+  // console.log(data);
+  const limitedProducts = data?.slice(0, 6);
 
   return (
     <div>
@@ -53,7 +56,9 @@ const TrendingProducts = () => {
           >
             <Link to="#">
               <img
-                src={`${import.meta.env.VITE_SERVER_URL}/images/${product.image}`}
+                src={`${import.meta.env.VITE_SERVER_URL}/images/${
+                  product?.image
+                }`}
                 alt="Product"
                 className="h-80 w-72 object-cover rounded-t-xl"
               />
