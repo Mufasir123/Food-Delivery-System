@@ -49,3 +49,30 @@ export const getUserOrders = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+
+export const clearOrderHistory = async (req, res)=>{
+    try {
+        const {id} = req.params
+        const orders = await Order.deleteMany({id})
+
+        if(!orders.deletedCount === 0){
+
+            return res.status(400).json({
+                message:"No orders found for this user",
+                success:false
+            })
+        }
+
+        return res.status(200).json({
+            message:"Orders deleted Successfully",
+            success:true
+        })
+    } catch (error) {
+        console.error("Error clearing order history:", error);
+        res.status(500).json({
+            message: "Internal server error",
+            success: false,
+        });
+    }
+}
