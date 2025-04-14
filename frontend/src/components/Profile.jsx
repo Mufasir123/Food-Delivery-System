@@ -74,32 +74,33 @@ const Profile = ({ isMobile }) => {
   if (user) {
     if (isMobile) {
       return (
-        <>
-          <div className="border-t border-gray-200 pt-4">
-            <p className="font-semibold">{user.name}</p>
-            <p className="text-sm text-gray-600">{user.email}</p>
-          </div>
+        <div className="flex flex-col gap-2 border-t-2 border-[#efe8e8] text-white">
+
           <Link
             to="/orders"
-            className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+            className="text-base font-mediu transition-all duration-200 hover:text-[#e56e6e] bg-black h-10  rounded-lg flex items-center justify-center"
           >
             Orders
           </Link>
           <Link
             to="/cart"
-            className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+            className="text-base font-mediu transition-all duration-200 hover:text-[#e56e6e] bg-black h-10  rounded-lg flex items-center justify-center"
           >
             <FaCartPlus className="inline mr-2" />
             Cart
           </Link>
+          <div className="text-base font-mediu transition-all duration-200 hover:text-[#e56e6e] bg-black h-18 w-40 rounded-lg flex flex-col gap-2 justify-center pl-2 mt-2">
+            <p className="font-semibold">{user.name}</p>
+            <p className="text-sm">{user.email}</p>
+          </div>
           <button
             onClick={logoutHandler}
-            className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-red-600"
+            className="text-base font-mediu transition-all duration-200 hover:text-[#e56e6e] bg-black h-10 w-full rounded-lg flex items-center justify-center p-1"
           >
             <RiLogoutCircleFill className="inline mr-2" />
             Logout
           </button>
-        </>
+        </div>
       )
     } else {
       return (

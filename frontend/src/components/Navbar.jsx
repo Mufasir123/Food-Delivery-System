@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
@@ -62,18 +62,18 @@ const Navbar = () => {
         </nav>
 
         {expanded && (
-          <div>
-            <nav className="px-1 pt-8 pb-4 z-50 bg-amber-50 rounded-lg ml-62">
+          <div className="absolute inset-x-0 top-16 shadow-lg rounded-lg p-4 md:hidden bg-[#ffffff] text-white flex justify-center">
+            <nav className="flex flex-col gap-y-4">
               <div className="grid gap-y-6 pl-5">
                 <Link
                   to="/"
-                  className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+                  className="text-base font-mediu transition-all duration-200 hover:text-[#e56e6e] bg-black h-10 rounded-lg flex items-center justify-center"
                 >
                   Features
                 </Link>
                 <Link
                   to="/"
-                  className="text-base font-medium text-gray-900 transition-all duration-200 hover:text-indigo-600"
+                  className="text-base font-mediu transition-all duration-200 hover:text-[#e56e6e] bg-black h-10  rounded-lg flex items-center justify-center"
                 >
                   About
                 </Link>
